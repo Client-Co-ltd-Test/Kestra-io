@@ -6,9 +6,6 @@ on:
      - opened
   pull_requests:
     branches: [develop]
-
-permissions:
-  content: read
 jobs:
   test-runner: 
     name: Test Self hosted runner
