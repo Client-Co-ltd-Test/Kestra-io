@@ -9,7 +9,7 @@ on:
 jobs:
   test-runner: 
     name: Test Self hosted runner
-    runs-on: [self-hosted, windows, x64, winservercanarys]
+    runs-on: [self-hosted, windows, x64, kestra]
     steps:
       - name: Display Runner Information
         shell: powershell
