@@ -1,0 +1,26 @@
+name: Self-hosted runner test
+
+on: 
+  issues:
+    types:
+     - opened
+  pull_requests:
+    branches: [develop]
+
+permissions:
+  content: read
+jobs:
+  test-runner: 
+    name: Test Self hosted runner
+    runs-on: [self-hosted, windows, x64, winservercanarys]
+    steps:
+      - name: Display Runner Information
+        shell: powershell
+        run: |
+          Write-Host "Running on self-hosted runner" 
+          Write-Host "Computer Name: $env:COMPUTERNAME" 
+          Write-Host "OS: $env:OS"
+      - name: Test execution
+        shell: powershell
+        run: |
+          Write-Host "Issue or Pull Request event Triggered Successfully"
